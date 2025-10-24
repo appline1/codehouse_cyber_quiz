@@ -9,15 +9,38 @@ console = Console()
 
 def register_flow():
     """
-    Register a new participant on the website by collecting fullname, email and phone.
-    The website is expected to send back a temporary token or accept that it will email a token.
+    Register a new participant on the website by collecting fullname, email, phone,
+    password, and confirm password. The website is expected to send back a temporary
+    token or email it to the user.
     """
-    console.print(Panel.fit("Registration — Create a participant (Fullname, Email, Phone)", title="Register", style="green"))
+    console.print(Panel.fit(
+        "Registration — Create a participant (Fullname, Email, Phone, Password)",
+        title="Register",
+        style="green"
+    ))
+
     fullname = Prompt.ask("Full name").strip()
     email = Prompt.ask("Email").strip()
     phone = Prompt.ask("Phone number").strip()
 
-    payload = {"fullname": fullname, "email": email, "phone": phone}
+    # Password input (masked)
+    while True:
+        password = Prompt.ask("Password", password=True).strip()
+        confirm_password = Prompt.ask("Confirm Password", password=True).strip()
+        if password != confirm_password:
+            console.print("[red]Passwords do not match. Please try again.[/red]")
+        elif len(password) < 6:
+            console.print("[yellow]Password too short. Use at least 6 characters.[/yellow]")
+        else:
+            break
+
+    payload = {
+        "fullname": fullname,
+        "email": email,
+        "phone": phone,
+        "password": password
+    }
+
     try:
         resp = requests.post(API_REGISTER_USER, json=payload, timeout=REMOTE_TIMEOUT)
     except Exception as e:
@@ -28,12 +51,14 @@ def register_flow():
         console.print(f"[red]Registration failed:[/red] {resp.status_code} {resp.text}")
         return None, None
 
+    # Parse server response
     data = resp.json()
-    # Expected server: returns temp_token (but server may email it instead).
     temp_token = data.get("temp_token")
+
     console.print("[green]Registration request received. Check your email for a temporary token.[/green]")
     if temp_token:
         console.print("[cyan]Server also returned a temporary token (useful for testing).[/cyan]")
+
     return email, temp_token
 
 def verify_temp_token_flow(email):
@@ -49,8 +74,7 @@ def verify_temp_token_flow(email):
         
         try:
             resp = requests.post(API_VERIFY_TOKEN, json={"email": email, "token": tok}, timeout=REMOTE_TIMEOUT)
-            print(f"[yellow]Debug: response code {resp.status_code}[/yellow]")
-            if resp.status_code == 200:
+            if resp.status_code == 200 or resp.status_code==201:
                 console.print("[green]Token verified successfully.[/green]")
                 return True
             else:

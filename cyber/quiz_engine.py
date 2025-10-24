@@ -24,7 +24,7 @@ def load_questions():
     except Exception as e:
         console.print(f"[yellow]Could not load questions from server: {e}[/yellow]")
         try:
-            with open("cyb/local_questions.json", "r", encoding="utf-8") as f:
+            with open("cyber/local_questions.json", "r", encoding="utf-8") as f:
                 return json.load(f)
         except Exception as e2:
             console.print(f"[red]Failed to load local questions: {e2}[/red]")
@@ -80,25 +80,25 @@ def present_question(q, idx, total, sti, token, running_score):
         # UI feedback
         if correct_flag:
             console.print("[green]✅ Correct[/green]")
-        else:
-            # compute correct repr for display
-            corr_repr = None
-            if "answer_index" in q:
-                corr_repr = options[q["answer_index"]]
-            elif "answer" in q and isinstance(q["answer"], str):
-                corr_repr = q["answer"]
-            else:
-                corr_repr = "(unknown)"
-            console.print(f"[red]❌ Wrong — expected:[/red] {corr_repr}")
+        # else:
+        #     # compute correct repr for display
+        #     corr_repr = None
+        #     if "answer_index" in q:
+        #         corr_repr = options[q["answer_index"]]
+        #     elif "answer" in q and isinstance(q["answer"], str):
+        #         corr_repr = q["answer"]
+        #     else:
+        #         corr_repr = "(unknown)"
+        #     console.print(f"[red]❌ Wrong — expected:[/red] {corr_repr}")
 
         # Save locally and send log remotely
         entry = dict(
             sti=sti,
             question=qtext,
             student_answer=options[choice],
-            correct_answer=corr_repr,
+            # correct_answer=corr_repr,
             is_correct=bool(correct_flag),
-            timestamp=timestamp()
+            # timestamp=timestamp()
         )
         save_to_db(**entry)
         send_remote_log(token, entry)
@@ -137,7 +137,7 @@ def run_quiz(sti, token=None):
             if r.status_code == 200:
                 top = r.json()[0] if r.json() else None
                 if top:
-                    console.print(f"[magenta]Top: {top.get('name')} — {top.get('score')}[/magenta]")
+                    console.print(f"[magenta]Top Scorer: {top.get('name')} — {top.get('score')}[/magenta]")
         except Exception:
             # don't spam network errors
             pass

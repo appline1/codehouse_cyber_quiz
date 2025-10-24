@@ -18,7 +18,7 @@ def main():
         if not email:
             console.print("[red]Registration failed — aborting.[/red]")
             return
-        ok = verify_temp_token_flow(returned_temp_token)
+        ok = verify_temp_token_flow(email)
         if not ok:
             console.print("[red]Token verification failed — aborting.[/red]")
             return
