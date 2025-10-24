@@ -1,0 +1,2 @@
+[console_scripts]
+cyb-start = cyb.start:main
