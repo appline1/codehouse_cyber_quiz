@@ -1,4 +1,4 @@
-# 🛡️ Codehouse Cybersecurity Training Client (`codehouse_cyb`)
+# 🛡️ Codehouse Cybersecurity Training Cli (`codehouse_cyb`)
 
 [![Build Status](https://github.com/applinet-technology/codehouse_cyber_quiz/actions/workflows/python-app.yml/badge.svg)](https://github.com/applinet-technology/codehouse_cyber_quiz/actions)
 [![GitHub release](https://img.shields.io/github/v/release/applinet-technology/codehouse_cyber_quiz?color=brightgreen&label=version)](https://github.com/applinet-technology/codehouse_cyber_quiz/releases)
