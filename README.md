@@ -8,7 +8,7 @@
 [![Stars](https://img.shields.io/github/stars/applinet-technology/codehouse_cyber_quiz?style=social)](https://github.com/applinet-technology/codehouse_cyber_quiz/stargazers)
 
 ---
-DEMO
+
 ![CLI Demo](https://raw.githubusercontent.com/appline1/codehouse_cyber_quiz/refs/heads/master/WhatsApp%20Image%202025-10-25%20at%2016.37.46_447e0a48.jpg)
 
 ![CLI Demo](https://raw.githubusercontent.com/appline1/codehouse_cyber_quiz/refs/heads/master/WhatsApp%20Image%202025-10-25%20at%2016.38.32_28d91aa4.jpg)
