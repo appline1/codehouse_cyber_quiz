@@ -1,6 +1,5 @@
 # 🛡️ Codehouse Cybersecurity Training Cli (`codehouse_cyb`)
 
-](https://github.com/applinet-technology/codehouse_cyber_quiz/actions)
 [![GitHub release](https://img.shields.io/github/v/release/applinet-technology/codehouse_cyber_quiz?color=brightgreen&label=version)](https://github.com/applinet-technology/codehouse_cyber_quiz/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/applinet-technology/codehouse_cyber_quiz)](https://github.com/applinet-technology/codehouse_cyber_quiz/issues)
