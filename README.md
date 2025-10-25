@@ -1,6 +1,6 @@
 # 🛡️ Codehouse Cybersecurity Training Cli (`codehouse_cyb`)
 
-[![Build Status](https://github.com/applinet-technology/codehouse_cyber_quiz/actions/workflows/python-app.yml/badge.svg)](https://github.com/applinet-technology/codehouse_cyber_quiz/actions)
+[![Build Status](https://raw.githubusercontent.com/appline1/codehouse_cyber_quiz/f27934854869a48c5869ad08af168dfc65785544/secure-svgrepo-com.svg)](https://github.com/applinet-technology/codehouse_cyber_quiz/actions)
 [![GitHub release](https://img.shields.io/github/v/release/applinet-technology/codehouse_cyber_quiz?color=brightgreen&label=version)](https://github.com/applinet-technology/codehouse_cyber_quiz/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/applinet-technology/codehouse_cyber_quiz)](https://github.com/applinet-technology/codehouse_cyber_quiz/issues)
@@ -210,3 +210,8 @@ Join our African Cybersecurity community:
 "Empowering Africans through culturally rooted technology education."
 — CodeHouse Cloud & Applinet Technology
 Bridging knowledge, culture, and cybersecurity.
+
+DEMO
+![CLI Demo](https://raw.githubusercontent.com/appline1/codehouse_cyber_quiz/refs/heads/master/WhatsApp%20Image%202025-10-25%20at%2016.37.46_447e0a48.jpg)
+
+![CLI Demo](https://raw.githubusercontent.com/appline1/codehouse_cyber_quiz/refs/heads/master/WhatsApp%20Image%202025-10-25%20at%2016.38.32_28d91aa4.jpg)
